@@ -1,5 +1,3 @@
-![](https://i.imgur.com/ld6aL74.png =200x)
-
 # LAB | Express Beers
 
 ## Introducción
