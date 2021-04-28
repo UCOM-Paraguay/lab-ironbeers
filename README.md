@@ -1,25 +1,25 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+![](https://i.imgur.com/ld6aL74.png =200x)
 
-# LAB | Express IronBeers
+# LAB | Express Beers
 
-## Introduction
+## Introducción
 
-Sometimes you would just like to have a very descriptive list of all beers so you could see their type, color, each beer's percentage of alcohol, or which beer is well pared with some food. In this lab, you will create a web app where the user will be able to see a list of beers, get random suggestions, and read a very descriptive explanation of each beer.
+A veces, nos gustaría tener una lista muy descriptiva de todas las cervezas para poder ver su tipo, color, el porcentaje de alcohol de cada cerveza o qué cerveza se combina bien con algo de comida. En este ejercicio, crearemos una aplicación web donde el usuario podrá ver una lista de cervezas, recibir sugerencias aleatorias y leer una explicación muy descriptiva de cada cerveza.
 
-"How will we get all of this information?", you might ask. Well, we will be using an npm package :package: as our data source.
+"¿Cómo obtendremos toda esta información?". Bueno, usaremos un paquete npm como fuente de datos.
 
-For this exercise, we will work with the **[PunkAPI](https://www.npmjs.com/package/punkapi-javascript-wrapper)** npm package. In the background, the package communicates with a remote _database_ that contains all of the beers. The package enables us to use its methods that can help us to retrieve beers. Each beer has some properties, and we can play around with this data to practice working with Handlebars templates, `layouts` and `partials`.
+Para este ejercicio, trabajaremos con el paquete npm **[PunkAPI](https://www.npmjs.com/package/punkapi-javascript-wrapper)**. En segundo plano, el paquete se comunica con una _base de datos_ remota que contiene todas las cervezas. El paquete nos permite utilizar sus métodos que pueden ayudarnos a mostrar cervezas. Cada cerveza tiene algunas propiedades, y podemos jugar con estos datos para practicar el trabajo con plantillas, `layuts` y` partials` de Handlebars.
 
-**In this lab, we can also practice reading external (PunkAPI) docs and learn how to get what we need from the database.**
+**En este lab, también podemos practicar la lectura de documentos externos (PunkAPI) y aprender cómo obtener lo que necesitamos de la base de datos.**
 
-## Requirements
+## Requerimientos
 
-- Fork this repo
-- Then clone this repo.
+- Hacer `fork` este repositorio.
+- Hacer `clone` del respositorio.
 
-## Submission
+## Entrega
 
-- Upon completion, run the following commands:
+- Una vez que termines, correr los siguientes comandos:
 
 ```shell
 $ git add .
@@ -27,19 +27,19 @@ $ git commit -m "done"
 $ git push origin master
 ```
 
-- Create Pull Request so your TAs can check up your work.
+- Crear un Pull Request para poder corregir.
 
-## Instructions
+## Instrucciones
 
-### Iteration 0: Initial setup
+### Paso 0: Setup Inicial
 
-To run our application, the first thing you have to do is to install all of its dependencies. Run the following command:
+Para ejecutar nuestra aplicación, lo primero que tenemos que hacer es instalar todas sus dependencias. Ejecute el siguiente comando:
 
 ```shell
 $ npm install
 ```
 
-To run the app:
+Para correr la aplicación:
 
 ```shell
 $ node app.js
@@ -47,47 +47,47 @@ $ node app.js
 # you can also run: npm start
 ```
 
-### Iteration 1: Layout barebones
+### Paso 1: Creando el layout
 
-Our starter code includes the basic configuration needed to run our app. The **`/`** route is set to render the `index.hbs` file. Let's start by creating a layout.
+Nuestro código de inicio incluye la configuración básica necesaria para ejecutar nuestra aplicación. La ruta **`/`** está configurada para representar el archivo `index.hbs`. Comencemos creando un layout.
 
-Inside of the `views` folder, create a `layout.hbs` file. In the bonus iteration, you can give your app some style, but for now, let's focus on the logic.
+Dentro de la carpeta `views`, cree un archivo` layout.hbs`. En la iteración adicional, puede darle a su aplicación algo de estilo, pero por ahora, centrémonos en la lógica.
 
-Remember to add the `{{{ body }}}` to the **main layout**.
+Recuerde agregar el `{{{body}}}` al **layout**.
 
-Add a navbar that includes links to 3 pages:
+Agregue una barra de navegación que incluya enlaces a 3 páginas:
 
-- _Home_ ==> should navigate to `/`.
-- _Beers_ ==> should navigate to `/beers`.
-- _Random Beer_ ==> should navigate to `/random-beer`.
+- _Home_ ==> debe navegar a `/`.
+- _Beers_ ==> debe navegar a `/beers`.
+- _Random Beer_ ==> debe navegar a `/random-beer`.
 
-Layout done, let's move to creating these three pages.
+Layout listo, pasemos a la creación de estas tres páginas.
 
-### Iteration 2 - Home _page_
+### Paso 2 - Home _page_
 
-- The first page should be **Home** and should be rendered on **`/`**. The file that gets rendered is `index.hbs`.
-- This file should include the _beer image_, which you can find at `/public/images`. Together with the image, `index.hbs` should have two links: `Check the Beers!` and `Check a Random Beer`. Both links should navigate to the corresponding routes (which we previously defined in our navbar as well). Later, you can style these `a` tags to make them look like buttons.
+- La primera página debe ser **Inicio** y debe mostrarse en **`/`**. El archivo que se renderiza es `index.hbs`.
+- Este archivo debe incluir la _imagen de cerveza_, que puede encontrar en `/public/images`. Junto con la imagen,`index.hbs` debe tener dos enlaces:` Check the Beers!` Y `Check a Random Beer`. Ambos enlaces deben navegar a las rutas correspondientes (que también definimos previamente en nuestra barra de navegación). Más tarde, puede diseñar estas etiquetas `a` para que parezcan botones.
 
 ![image](https://user-images.githubusercontent.com/23629340/36723774-7d791ef2-1bb1-11e8-991b-39dbf4fd8a59.png)
 
-### Iteration 3 - Beers _page_
+### Paso 3 - Beers _page_
 
-The next thing we will be working on is a page where we can present all the beers we will retrieve from the remote database. This page will be rendered every time the user visits the the `/beers` route.
+Lo siguiente en lo que trabajaremos es en una página donde podemos presentar todas las cervezas que recuperaremos de la base de datos. Esta página será renderizada cada vez que el usuario visite la ruta `/beers`.
 
-This leads us to the conclusion that in this step, we have the two main focus areas:
+Esto nos lleva a la conclusión de que en este paso, tenemos las dos áreas de enfoque principales:
 
-- the `/beers` route and
-- the `beers.hbs` view.
+- La ruta `/beers`, y
+- La vista `beers.hbs`.
 
-#### Iteration 3.1 The `/beers` route
+#### Paso 3.1 La ruta `/beers`
 
-In this step, we will have a couple of micro-steps:
+En este paso, tendremos un par de micropasos. :
 
-- Create a `/beers` route inside the `app.js` file.
-- Inside the `/beers` route, call the `getBeers()` method (the **PunkAPI** provides this method, and you can find more about it [here](https://www.npmjs.com/package/punkapi-javascript-wrapper#getbeersoptions)). **Calling the `.getBeers()` method returns a promise that should be resolved with an array of 25 beers**.
-- Down the road, you should pass that array to the `beers.hbs` view.
+- Cree una ruta `/beers` dentro del archivo `app.js`.
+- Dentro de la ruta `/beers`, llame al método `getBeers()`(**PunkAPI** proporciona este método, y puede encontrar más sobre él [aquí](https://www.npmjs.com/package/punkapi-javascript-wrapper#getbeersoptions)). **Llamar al método `.getBeers ()` devuelve una promesa que debería resolverse con una matriz de 25 cervezas**.
+- Más adelante, deberías pasar esa matriz a la vista `beers.hbs`.
 
-The example of how this method works is shown below:
+El ejemplo de cómo funciona este método se muestra a continuación:
 
 ```js
 punkAPI
@@ -96,109 +96,107 @@ punkAPI
   .catch(error => console.log(error));
 ```
 
-#### 3.2 The `beers.hbs` view
+#### Paso 3.2 La vista `beers.hbs`
 
-- Create a `beers.hbs` file to render every time we call this route.
-- This file should have access to the beers we get as a response from the database. Remember, you should call the `render` method after getting the _beers_ array. _Hint:_ That means inside of the function you're passing to the `then` method. :wink:
-- On the `beers.hbs` view, loop over the **array of beers** using an `{{#each}}` loop. Display an **image**, **name**, **description** and **tagline**.
+- Cree un archivo `beers.hbs` para renderizar cada vez que llamemos a esta ruta.
+- Este archivo debería tener acceso a las cervezas que obtenemos como respuesta de la base de datos. Recuerde, debe llamar al método `render` después de obtener la matriz _beers_. *_Pista:_ Eso significa que dentro de la función estás pasando al método `then`. :wink:*
+- En la vista `beers.hbs`, recorra la **matriz de cervezas** usando un bucle`{{#each}}`. Muestra una **imagen**, **nombre**, **descripción** y **tagline**.
 
-Now, when you click on the `Beers` link on the top navigation or on the `Check the beers` button, you should be able to see all the beers. Boom! :boom:
+Ahora, cuando haga clic en el enlace "Beers" en la barra de navegación superior o en el botón "Check the beers", debería poder ver todas las cervezas. :boom:
 
-### Iteration 4 - Random beer _page_
+### Paso 4 - Página random beer
 
-As in the previous step, we will have to focus on creating a route to display a random beer. When a random beer is retrieved, we have to pass it to the view.
+Como en el paso anterior, tendremos que centrarnos en crear una ruta para mostrar una cerveza aleatoria. Cuando se recupera una cerveza al azar, tenemos que pasarla a la vista.
 
-#### 4.1 The `/random-beer` route
+#### Paso 4.1 La ruta `/random-beer`
 
-- Let's create the `/random-beer` route.
-- Inside the route, you should call the PunkAPI `getRandom()` method. It returns a promise that will resolve with a different beer object on every call. Look at the [documentation](https://www.npmjs.com/package/punkapi-javascript-wrapper#getrandom) to understand the structure of the data that you're supposed to get back. :+1:
+- Creemos la ruta `/random-beer`.
+- Dentro de la ruta, debes llamar al método PunkAPI `getRandom()`. Devuelve una promesa que se resolverá con un objeto de cerveza diferente en cada llamada. Mire la [documentación](https://www.npmjs.com/package/punkapi-javascript-wrapper#getrandom) para comprender la estructura de los datos que se supone que debe recuperar. :+1:
 
-The example of how this method works is shown below:
+El ejemplo de cómo funciona este método se muestra a continuación: 
 
 ```js
 punkAPI
   .getRandom()
   .then(responseFromAPI => {
-    // your magic happens here
+    // aqui ponemos el resto de nuestro código después
   })
   .catch(error => console.log(error));
 ```
 
-- Eventually, the received beer needs to be passed to the `random-beer.hbs` file. You still don't have this file, so let's proceed to create it.
+- Finalmente, la cerveza recibida debe pasarse al archivo `random-beer.hbs`. Aún no tienes este archivo, así que procedamos a crearlo.
 
-#### 4.2 The `random-beer.hbs` view
+#### Paso 4.2 La vista `random-beer.hbs`
 
-- The `random-beer.hbs` should display the random beer that was retrieved from the database. You should display an **image**, **name**, **description**, **tagline**, **food pairing** and **brewer tips**. The following image shows how this page could look like if you give it a bit of style. However, the styling will come later, so, for now, focus on rendering all the information:
+- El archivo `random-beer.hbs` debería mostrar la cerveza aleatoria que se recuperó de la base de datos. Debes mostrar una **imagen**, **nombre**, **descripción**, **tagline**, **maridaje de alimentos** y **consejos de cervecería**. La siguiente imagen muestra cómo podría verse esta página si le da un poco de estilo. Sin embargo, el estilo lo pondremos después, así que, por ahora, concéntrate en renderizar toda la información:
 
 ![image](https://user-images.githubusercontent.com/23629340/36724536-c5924892-1bb3-11e8-8f22-fd1f8ce316af.png)
 
-Now, every time the user clicks on the _Random beer_ link in the navbar or on the _Check a random beer_ button on the home page, they should see this page with a new, random beer.
-
-**You've just finished all the mandatory iterations. Good job!**
-
-Let's proceed to the bonus iterations.
+Ahora, cada vez que el usuario hace clic en el enlace _Random beer_ en la barra de navegación o en el botón _Check a random beer_ en la página de inicio, debería ver esta página con una nueva cerveza aleatoria.
 
 :::info
-On every iteration, you should render a `partial` passing the information regarding the corresponding beer.
+En cada paso, debe generar un `partial` pasando la información con respecto a la cerveza correspondiente.
 :::
 
-### Bonus: Iteration 5 - Beer partial
+### Paso 5 - Beer `partial`
 
-**Partials represent templates that are likely to be reused.**
+**Los `partial` representan componentes que pueden ser reutilizados.**
 
-Let's see what beer properties we display on the `/beers` _(the beers page)_ and compare them with the properties we displayed on the `/random-beer` _(random beer)_ page:
+Veamos qué propiedades de la cerveza mostramos en la página `/beers` _(beers page)_ y compárelas con las propiedades que mostramos en la página` /random-beer` _(random beer)_:
 
-| properties/ page |      `/beers`      |   `/random-beer`   |
-| :--------------: | :----------------: | :----------------: |
-|      image       | :white_check_mark: | :white_check_mark: |
-|       name       | :white_check_mark: | :white_check_mark: |
-|   description    | :white_check_mark: | :white_check_mark: |
-|     tagline      | :white_check_mark: | :white_check_mark: |
-|   food pairing   |        :x:         | :white_check_mark: |
-|   brewer tips    |        :x:         | :white_check_mark: |
+| propiedades/ página  |      `/beers`      |   `/random-beer`   |
+| :--------------:     | :----------------: | :----------------: |
+|      imágen          | :white_check_mark: | :white_check_mark: |
+|       nombre         | :white_check_mark: | :white_check_mark: |
+|   descripción        | :white_check_mark: | :white_check_mark: |
+|     tagline          | :white_check_mark: | :white_check_mark: |
+|   maridaje de comida |        :x:         | :white_check_mark: |
+|   consejos           |        :x:         | :white_check_mark: |
 
-As we can see, we have 4 in common properties, which means our code could be a bit more **DRY** if we refactor it using _partials_.
+Como podemos ver, tenemos 4 en propiedades comunes, lo que significa que nuestro código podría ser un poco más **DRY** si lo refactorizamos usando _partials_.
 
-You should create a partial to show each beer.
+Debes crear un `partial` para mostrar cada cerveza.
 
-- First, we need to register where our `partials` will be located. So you need to add the following code to the `app.js` file:
+- Primero, necesitamos registrarnos donde se ubicarán nuestros `partials`. Por lo tanto, debe agregar el siguiente código al archivo `app.js`:
 
 ```jsx
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
 ```
 
-- Next, you should create a `partials` folder inside the `views`, and `beerpartial.hbs` file inside the `partials` folder (**Note**: We're not including dashes in the `hbs` partial names, since handlebars partials need to follow the same naming conventions as JavaScript variables).
-- Our `beerpartial.hbs` will display the properties that both views share: **image**, **name**, **description**, and **tagline** of the beer.
-- Now, you can go ahead and plug in this partial in the `beers.hbs` view inside the `each` loop.
+- A continuación, debe crear una carpeta `partials` dentro de` views`, y un archivo `beerpartial.hbs` dentro de la carpeta` partials` (**Nota**: No incluimos guiones en los nombres parciales de `hbs` , dado que los parciales del manillar deben seguir las mismas convenciones de nomenclatura que las variables de JavaScript).
+- Nuestro `beerpartial.hbs` mostrará las propiedades que comparten ambas vistas: **imagen**, **nombre**, **descripción** y **tagline** de la cerveza.
+- Ahora, puede continuar y conectar este parcial en la vista `beers.hbs` dentro del bucle` each`.
 
-After creating the partial, and looping over the array of beers, on our `/beers` route, we should have the following:
+Después de crear el `partial` y recorrer el `array` de cervezas, en nuestra ruta `/beers`, deberíamos tener lo siguiente:
 
 ![image](https://user-images.githubusercontent.com/23629340/36724392-61fa7336-1bb3-11e8-8468-189908167e10.png)
 
-- Also, you can use it in the `random-beer.hbs` page.
+- También podemos utilizar en la página `random-beer.hbs`.
 
-Our code shrunk by a lot just because we managed to create a reusable piece of code (the partial), which we can now place wherever we need to use this set of properties.
+Nuestro código se redujo mucho solo porque logramos crear un fragmento de código reutilizable (el parcial), que ahora podemos colocar donde necesitemos usar este conjunto de propiedades.
 
-### Bonus: Iteration 6
+### Paso 6 - Detalle de cada cerveza
 
-Make all the beers on the beers page clickable. If users click on a specific beer, they should be able to see a page with the detailed information of that particular beer. **You can reuse the same partial you used for iteration 5**. As a matter of fact, you should. That's what partials are for. The trick is to wrap an anchor tag around every beer that has the beer `id` in the `href` property. Something like:
+Tenemos que hacer que se pueda hacer clic en todas las cervezas de la página de cervezas. Si los usuarios hacen clic en una cerveza específica, deberían poder ver una página con la información detallada de esa cerveza en particular. **Puede reutilizar el mismo `partial` que utilizó para el paso 5**. De hecho, debería hacerlo. Para eso son los `partials`. El truco consiste en envolver en una etiqueta `<a href></a>` el nombre de cada cerveza.
+
+La etiqueta debe tener el `id` de la cerveza en la propiedad`href`. Algo como:
 
 ```html
-<a href="/beers/beer-i3f4d34s34b"><!-- name of the beer --></a>
+<a href="/beers/beer-i3f4d34s34b"><!-- Nombre de la cerveza --></a>
 ```
 
-To understand how you can get the `id` from the URL, read this section of the [Express docs](http://expressjs.com/en/4x/api.html#req.params).
+Para comprender cómo puede obtener el `id` de la URL, lea esta sección del [la documentación de Express](http://expressjs.com/en/4x/api.html#req.params) o revise la lección de `GET Params`.
 
-To find out how you can get an individual beer from the punkAPI using the _beerId_, check out the [`.getBeer(id)` method on the punkAPI docs](https://www.npmjs.com/package/punkapi-javascript-wrapper#getbeerid).
+Para averiguar cómo puede obtener una cerveza individual del punkAPI usando el _beerId_, consulte el [método `.getBeer(id)` en la documentación de punkAPI](https://www.npmjs.com/package/punkapi-javascript-wrapper#getbeerid).
 
-### Bonus: Iteration 7
+### Paso 7 - Agregar estilos
 
-The overall layout should look like this:
+El diseño general debería verse así:
 
 ![image](https://user-images.githubusercontent.com/23629340/36723450-8bbcb164-1bb0-11e8-81c3-4fe939730bb9.png)
 
-You will find the `colors` and `fonts` on the `css` file. Remember to link the `css` file to your **main layout**.
+Encontrará los `colores` y las`fuentes` en el archivo `css`. Recuerda vincular el archivo `css` a tu **layout**.
 
-Let your artsy side shine! :sparkles:
+¡Deja que tu lado artístico brille! :sparkles:
 
 Happy Coding! 💙
