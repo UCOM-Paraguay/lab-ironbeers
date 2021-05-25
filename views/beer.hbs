@@ -1,0 +1,15 @@
+
+<h1>Beer Id</h1>
+<br>
+{{#each beer}}
+    {{> beerCard this}}
+    <h5>Food Pairing</h5>
+    <ul>
+    {{#each this.food_pairing}}
+        <li>{{this}}</li>
+    {{/each}}
+    </ul>
+    <br>
+    <p class='card-text'><b>Brewers Tips: </b>{{this.brewers_tips}}</p>
+{{/each}}
+</div>
