@@ -1,9 +1,10 @@
 
 <h1>Beer Id</h1>
 <br>
+<div class="row justify-content-center">
 {{#each beer}}
     {{> beerCard this}}
-    <h5>Food Pairing</h5>
+    <h5><b>Food Pairing</b></h5>
     <ul>
     {{#each this.food_pairing}}
         <li>{{this}}</li>
@@ -12,4 +13,5 @@
     <br>
     <p class='card-text'><b>Brewers Tips: </b>{{this.brewers_tips}}</p>
 {{/each}}
+</div>
 </div>

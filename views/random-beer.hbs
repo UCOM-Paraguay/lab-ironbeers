@@ -1,6 +1,7 @@
 
 <h1>Random beer</h1>
 <br>
+<div class="row justify-content-center">
 {{#each beer}}
     {{> beerCard this}}
     <h5>Food Pairing</h5>
@@ -12,4 +13,5 @@
     <br>
     <p class='card-text'><b>Brewers Tips: </b>{{this.brewers_tips}}</p>
 {{/each}}
+</div>
 </div>
