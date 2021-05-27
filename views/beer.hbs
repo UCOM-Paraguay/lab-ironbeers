@@ -4,7 +4,19 @@
 <div class="row justify-content-center">
 {{#each beer}}
     {{> beerCard this}}
-    <h5><b>Food Pairing</b></h5>
+
+    <p class='card-text'><b>ABV: </b>{{this.abv}}</p>
+    <p class='card-text'><b>IBU: </b>{{this.ibu}}</p>
+    <p class='card-text'><b>Target FG: </b>{{this.target_fg}}</p>
+    <p class='card-text'><b>Target OG: </b>{{this.target_og}}</p>
+    <p class='card-text'><b>EBC: </b>{{this.ebc}}</p>
+    <p class='card-text'><b>SRM: </b>{{this.srm}}</p>
+    <p class='card-text'><b>PH: </b>{{this.ph}}</p>
+    <p class='card-text'><b>Srm: </b>{{this.srm}}</p>
+    <p class='card-text'><b>Attenuation level: </b>{{this.attenuation_level}}</p>
+    <p class='card-text'><b>Volume: </b>{{this.volume.value}} {{this.volume.unit}}</p>
+    <p class='card-text'><b>Boil Volume: </b>{{this.boil_volume.value}} {{this.boil_volume.unit}}</p>
+    <p><b>Food Pairing</b></p>
     <ul>
     {{#each this.food_pairing}}
         <li>{{this}}</li>
@@ -12,6 +24,11 @@
     </ul>
     <br>
     <p class='card-text'><b>Brewers Tips: </b>{{this.brewers_tips}}</p>
+    <footer class="blockquote-footer">
+        <small class="text-muted">
+          <cite title="Source Title">{{this.contributed_by}}</cite>
+        </small>
+      </footer>
 {{/each}}
 </div>
 </div>
